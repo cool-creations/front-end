@@ -6,12 +6,17 @@ import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import mainreducer from "./store/reducers/mainreducer";
-
+import { ThemeProvider } from "styled-components";
+import theme from "./components/theme";
 const store = createStore(mainreducer);
+
+//Theme
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </Provider>,
   document.getElementById("root")
 );
