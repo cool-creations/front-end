@@ -7,16 +7,19 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import mainreducer from "./store/reducers/mainreducer";
 import { ThemeProvider } from "styled-components";
-import theme from "./components/theme";
-const store = createStore(mainreducer);
+import { theme1 } from "./components/theme";
 
-//Theme
+import { BrowserRouter as Router } from "react-router-dom";
+
+const store = createStore(mainreducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme1}>
+        <App />
+      </ThemeProvider>
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

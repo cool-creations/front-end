@@ -1,6 +1,6 @@
 //Theme 1
 
-const theme1 = {
+export const theme1 = {
   textColor: "#eeeeee",
   color1: "#A9B7C0",
   color2: "#C7D8C6",
@@ -10,7 +10,7 @@ const theme1 = {
 
 //Theme 2
 
-const theme2 = {
+export const theme2 = {
   textColor: "#eeeeee",
   color1: "#CF6766",
   color2: "#30415D",
@@ -20,7 +20,7 @@ const theme2 = {
 
 //Theme 3
 
-const theme3 = {
+export const theme3 = {
   textColor: "#eeeeee",
   color1: "#C0B283",
   color2: "#DCD0C0",
