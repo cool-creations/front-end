@@ -5,21 +5,31 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   width: 100%;
   display: flex;
-  height: 60px;
+  height: 80px;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-  padding: 0px 20px;
+  padding: 0px 40px;
   color: ${({ theme }) => theme.textColor};
-  background-color: ${({ theme }) => theme.color1};
+  // background-color: ${({ theme }) => theme.color1};
   box-sizing: border-box;
+
+  max-width: ${({ theme }) => theme.maxWidth}
 `;
 
 const Title = styled.h2`
   margin: 0px;
   text-align: center;
   padding: 0px;
-  font-size: 21px;
+  font-size: 22px;
+  font-family: "Lora", serif;
+`;
+
+const ContentContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const LinksContainer = styled.div`
@@ -30,9 +40,11 @@ const LinksContainer = styled.div`
   a {
     text-decoration: none;
     position: relative;
-    font-size: 21px;
+    font-size: 21.5px;
     color: ${({ theme }) => theme.textColor};
     margin-left: 20px;
+    font-family: "Alegreya Sans", serif;
+    // text-transform: uppercase;
   }
 
   a::after {
@@ -41,7 +53,7 @@ const LinksContainer = styled.div`
     left: 0;
     width: 100%;
     height: 3px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.8);
     content: "";
     opacity: 0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -61,11 +73,13 @@ const LinksContainer = styled.div`
 const NavBar = () => {
   return (
     <Container>
-      <Title>Cool Creations</Title>
-      <LinksContainer>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </LinksContainer>
+      <ContentContainer>
+        <Title>Cool Creations</Title>
+        <LinksContainer>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </LinksContainer>
+      </ContentContainer>
     </Container>
   );
 };

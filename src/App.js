@@ -4,14 +4,20 @@ import { Route } from "react-router-dom";
 import NavBar from "./components/molecules/NavBar";
 import HomePage from "./components/organisms/HomePage";
 
+import styled from "styled-components";
+
+const Container = styled.div`
+  font-family: "Alegreya", serif;
+`;
+
 function App() {
   return (
-    <div>
+    <Container>
       <Route exact path="/">
-        <NavBar />
+        {/* <NavBar /> */}
         <HomePage />
       </Route>
-    </div>
+    </Container>
   );
 }
 
