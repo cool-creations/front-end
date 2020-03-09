@@ -10,7 +10,9 @@ import { Button } from "@material-ui/core";
 
 const styles = muiBaseTheme => ({
   card: {
+    width: "100%",
     maxWidth: 300,
+    minWidth: 300,
     margin: "auto",
     marginBottom: "25px",
     transition: "0.3s",
@@ -19,7 +21,7 @@ const styles = muiBaseTheme => ({
       boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
     },
     [muiBaseTheme.breakpoints.down("sm")]: {
-      maxWidth: "100%"
+      maxWidth: "550px"
     }
   },
   media: {
@@ -50,7 +52,14 @@ const styles = muiBaseTheme => ({
   }
 });
 
-const CategoryCard = ({ classes, image, title, description, disabled }) => {
+const CategoryCard = ({
+  classes,
+  image,
+  title,
+  description,
+  disabled,
+  onClick
+}) => {
   return (
     <Card className={classes.card}>
       <CardMedia
@@ -79,8 +88,9 @@ const CategoryCard = ({ classes, image, title, description, disabled }) => {
           color="primary"
           fullWidth
           disabled={disabled}
+          onClick={onClick}
         >
-          {disabled ? "Not Available" : "Test"}
+          {disabled ? "Not Available" : "View"}
         </Button>
       </CardContent>
     </Card>

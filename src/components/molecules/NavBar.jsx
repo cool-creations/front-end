@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { IconButton, makeStyles } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import Badge from "@material-ui/core/Badge";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   shoppingCart: {
@@ -22,7 +24,8 @@ const Container = styled.div`
   font-size: 20px;
   padding: 0px 40px;
   color: ${({ theme }) => theme.textColor};
-  background-color: ${({ isTop }) => (isTop ? "" : "black")};
+  background-color: ${({ isTop, isSolid }) =>
+    isSolid ? "rgb(0,0,0,0.9)" : isTop ? "" : "rgb(0,0,0,0.9)"};
   box-sizing: border-box;
   transition: background-color 0.35s;
 
@@ -84,8 +87,9 @@ const LinksContainer = styled.div`
   }
 `;
 
-const NavBar = () => {
+const NavBar = ({ solid }) => {
   const classes = useStyles();
+  const history = useHistory();
   const [isTop, setTop] = useState(true);
 
   const handleScroll = () => {
@@ -95,10 +99,6 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    console.log("Wa");
-  }, [isTop]);
-
-  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -106,14 +106,19 @@ const NavBar = () => {
   }, []);
 
   return (
-    <Container isTop={isTop}>
+    <Container isSolid={solid} isTop={isTop}>
       <ContentContainer>
         <Title>Cool Creations</Title>
         <LinksContainer>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <IconButton className={classes.shoppingCart}>
-            <ShoppingCartIcon />
+          <IconButton
+            onClick={() => history.push("/cart")}
+            className={classes.shoppingCart}
+          >
+            <Badge badgeContent="0" color="secondary">
+              <ShoppingCartIcon />
+            </Badge>
           </IconButton>
         </LinksContainer>
       </ContentContainer>
