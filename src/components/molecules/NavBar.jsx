@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { IconButton, makeStyles } from "@material-ui/core";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+
+const useStyles = makeStyles(theme => ({
+  shoppingCart: {
+    color: "white",
+    marginLeft: 15
+  }
+}));
 
 const Container = styled.div`
   position: fixed;
@@ -77,6 +86,7 @@ const LinksContainer = styled.div`
 `;
 
 const NavBar = () => {
+  const classes = useStyles();
   const [isTop, setTop] = useState(true);
 
   const handleScroll = () => {
@@ -103,6 +113,9 @@ const NavBar = () => {
         <LinksContainer>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
+          <IconButton className={classes.shoppingCart}>
+            <ShoppingCartIcon />
+          </IconButton>
         </LinksContainer>
       </ContentContainer>
     </Container>
