@@ -50,7 +50,7 @@ const styles = muiBaseTheme => ({
   }
 });
 
-const CategoryCard = ({ classes, image, title, description }) => {
+const CategoryCard = ({ classes, image, title, description, disabled }) => {
   return (
     <Card className={classes.card}>
       <CardMedia
@@ -78,8 +78,9 @@ const CategoryCard = ({ classes, image, title, description }) => {
           variant="contained"
           color="primary"
           fullWidth
+          disabled={disabled}
         >
-          Test
+          {disabled ? "Not Available" : "Test"}
         </Button>
       </CardContent>
     </Card>

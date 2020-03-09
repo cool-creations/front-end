@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 75vh;
+  height: 70vh;
   // background-color: gray;
   background-image: linear-gradient(
       90deg,

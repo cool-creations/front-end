@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+  cart: []
+};
 
 function mainReducer(state = initialState, action) {
   switch (action.type) {

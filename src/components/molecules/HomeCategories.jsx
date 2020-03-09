@@ -11,12 +11,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
-
-    // display: "grid",
-    // gridGap: 15,
-    // gridTemplateColumns: "repeat(3, 300px)",
-    // alignContent: "space-around",
-    // justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {}
   },
   button: {
@@ -43,16 +37,18 @@ const HomeCategories = () => {
         />
 
         <CategoryCard
-          title="Deco-mesh Wreaths"
+          title="Cork Key Chains"
           description="A collection of different wreaths for different occasians ranging from  "
         />
         <CategoryCard
-          title="Deco-mesh Wreaths"
+          title="Quilted Items"
           description="A collection of different wreaths for different occasians ranging from  "
+          disabled
         />
         <CategoryCard
-          title="Deco-mesh Wreaths"
+          title="Cat Beds"
           description="A collection of different wreaths for different occasians ranging from  "
+          disabled
         />
       </div>
     </div>

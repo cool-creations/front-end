@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   display: flex;
   height: 80px;
   align-items: center;
@@ -11,10 +13,12 @@ const Container = styled.div`
   font-size: 20px;
   padding: 0px 40px;
   color: ${({ theme }) => theme.textColor};
-  // background-color: ${({ theme }) => theme.color1};
+  background-color: ${({ isTop }) => (isTop ? "" : "black")};
   box-sizing: border-box;
 
-  max-width: ${({ theme }) => theme.maxWidth}
+  transition: background-color 0.35s;
+
+  z-index: 5;
 `;
 
 const Title = styled.h2`
@@ -27,6 +31,8 @@ const Title = styled.h2`
 
 const ContentContainer = styled.div`
   width: 100%;
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,8 +77,27 @@ const LinksContainer = styled.div`
 `;
 
 const NavBar = () => {
+  const [isTop, setTop] = useState(true);
+
+  const handleScroll = () => {
+    if (window.pageYOffset < 100) {
+      setTop(true);
+    } else setTop(false);
+  };
+
+  useEffect(() => {
+    console.log("Wa");
+  }, [isTop]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container>
+    <Container isTop={isTop}>
       <ContentContainer>
         <Title>Cool Creations</Title>
         <LinksContainer>
