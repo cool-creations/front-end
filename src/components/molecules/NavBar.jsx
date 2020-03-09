@@ -24,7 +24,6 @@ const Container = styled.div`
   color: ${({ theme }) => theme.textColor};
   background-color: ${({ isTop }) => (isTop ? "" : "black")};
   box-sizing: border-box;
-
   transition: background-color 0.35s;
 
   z-index: 5;

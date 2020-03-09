@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import backgroundImg from "../../images/background6.jpg";
+import backgroundImg from "../../images/background6_.jpg";
 import NavBar from "./NavBar";
 import { Button, makeStyles } from "@material-ui/core";
 
