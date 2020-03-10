@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { IconButton, makeStyles } from "@material-ui/core";
+import { IconButton, makeStyles, Tooltip } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { useHistory } from "react-router-dom";
@@ -118,7 +118,9 @@ const NavBar = ({ solid }) => {
             className={classes.shoppingCart}
           >
             <Badge badgeContent="0" color="secondary">
-              <ShoppingCartIcon />
+              <Tooltip title="Cart">
+                <ShoppingCartIcon />
+              </Tooltip>
             </Badge>
           </IconButton>
         </LinksContainer>

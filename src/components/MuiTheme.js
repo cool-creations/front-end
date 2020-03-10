@@ -3,6 +3,9 @@ import blueGrey from "@material-ui/core/colors/blueGrey";
 import { brown } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
+  breakpoints: {
+    about: 660
+  },
   palette: {
     primary: brown,
     secondary: blueGrey,
