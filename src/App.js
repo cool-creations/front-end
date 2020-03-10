@@ -6,7 +6,7 @@ import HomePage from "./components/organisms/HomePage";
 import ShoppingCartPage from "./components/organisms/ShoppingCartPage";
 import styled from "styled-components";
 import DecoMeshWreathsPage from "./components/organisms/DecoMeshWreathsPage";
-
+import AboutPage from "./components/organisms/AboutPage";
 const Container = styled.div`
   font-family: "Alegreya", serif;
 `;
@@ -27,7 +27,10 @@ function App() {
         <NavBar />
         <DecoMeshWreathsPage />
       </Route>
-
+      <Route exact path="/about">
+        <NavBar />
+        <AboutPage />
+      </Route>
       <Route exact path="/category/:categoryId"></Route>
     </Container>
   );

@@ -5,6 +5,7 @@ import { IconButton, makeStyles } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { useHistory } from "react-router-dom";
+import theme from "../MuiTheme";
 
 const useStyles = makeStyles(theme => ({
   shoppingCart: {
@@ -24,8 +25,8 @@ const Container = styled.div`
   font-size: 20px;
   padding: 0px 40px;
   color: ${({ theme }) => theme.textColor};
-  background-color: ${({ isTop, isSolid }) =>
-    isSolid ? "rgb(0,0,0,0.9)" : isTop ? "" : "rgb(0,0,0,0.9)"};
+  background-color: ${({ isTop, isSolid, theme }) =>
+    isSolid ? "#1B1C1Df0;" : isTop ? "" : "#1B1C1Df0"};
   box-sizing: border-box;
   transition: background-color 0.35s;
 
