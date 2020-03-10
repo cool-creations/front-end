@@ -40,13 +40,6 @@ const styles = muiBaseTheme => ({
   subheading: {
     lineHeight: 1.8
   },
-  avatar: {
-    display: "inline-block",
-    border: "2px solid white",
-    "&:not(:first-of-type)": {
-      marginLeft: -muiBaseTheme.spacing.unit
-    }
-  },
   button: {
     marginTop: 10
   }

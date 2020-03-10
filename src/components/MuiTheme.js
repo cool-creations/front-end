@@ -5,7 +5,10 @@ import { brown } from "@material-ui/core/colors";
 const theme = createMuiTheme({
   palette: {
     primary: brown,
-    secondary: blueGrey
+    secondary: blueGrey,
+    background: {
+      paper: "#f5f5f5"
+    }
   },
   maxWidth: "1800px"
 });
